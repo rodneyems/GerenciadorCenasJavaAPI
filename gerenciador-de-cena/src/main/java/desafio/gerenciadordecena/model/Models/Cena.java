@@ -3,15 +3,15 @@ package desafio.gerenciadordecena.model.Models;
 import java.time.LocalDateTime;
 
 public class Cena {
-    public int Id;
+    private int Id;
 
-    public String Title = "Sem Titulo";
+    private String Title = "Sem Titulo";
 
-    public StatusEnum Status = StatusEnum.Pendente;
+    private StatusEnum Status = StatusEnum.Pendente;
 
-    public StatusEnum PreviousStatus = StatusEnum.Pendente;
+    private StatusEnum PreviousStatus = StatusEnum.Pendente;
 
-    public LocalDateTime TimeLastChange;
+    private LocalDateTime TimeLastChange;
     
     public Cena(int Id, String Title, StatusEnum Status, StatusEnum PreviousStatus) {
     	this.setId(Id);
@@ -19,7 +19,7 @@ public class Cena {
     	this.setStatus(PreviousStatus);
     	this.setTimeLastChange(TimeLastChange);
     }
-    
+
 	public int getId() {
 		return Id;
 	}
@@ -59,4 +59,7 @@ public class Cena {
 	public void setTimeLastChange(LocalDateTime timeLastChange) {
 		TimeLastChange = timeLastChange;
 	}
+    
+    
+
 }

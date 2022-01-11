@@ -3,17 +3,17 @@ package desafio.gerenciadordecena.model.Models;
 import java.time.LocalDateTime;
 
 public class Log {
-    public int Id;
+	private int Id;
 
-    public int CenaId;
+	private int CenaId;
 
-    public ActionEnum Action;
+	private ActionEnum Action;
     
-    public StatusEnum De;
+	private StatusEnum De;
     
-    public StatusEnum Para;
+	private StatusEnum Para;
 
-    public LocalDateTime Time;
+	private LocalDateTime Time;
 
 	public int getId() {
 		return Id;
@@ -39,6 +39,22 @@ public class Log {
 		Action = action;
 	}
 
+	public StatusEnum getDe() {
+		return De;
+	}
+
+	public void setDe(StatusEnum de) {
+		De = de;
+	}
+
+	public StatusEnum getPara() {
+		return Para;
+	}
+
+	public void setPara(StatusEnum para) {
+		Para = para;
+	}
+
 	public LocalDateTime getTime() {
 		return Time;
 	}
@@ -46,4 +62,5 @@ public class Log {
 	public void setTime(LocalDateTime time) {
 		Time = time;
 	}
+
 }
