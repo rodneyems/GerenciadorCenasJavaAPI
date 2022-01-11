@@ -1,8 +1,10 @@
-package desafio.gerenciadordecena.model;
+package desafio.gerenciadordecena.model.DTO;
 
 import java.time.LocalDateTime;
 
-public class Cena {
+import desafio.gerenciadordecena.model.Models.StatusEnum;
+
+public class ReturnCenaDto {
     public int Id;
 
     public String Title = "Sem Titulo";
@@ -52,4 +54,6 @@ public class Cena {
 	public void setTimeLastChange(LocalDateTime timeLastChange) {
 		TimeLastChange = timeLastChange;
 	}
+    
+    
 }

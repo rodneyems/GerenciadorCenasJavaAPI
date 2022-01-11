@@ -1,4 +1,4 @@
-package desafio.gerenciadordecena.model;
+package desafio.gerenciadordecena.model.Models;
 
 import java.time.LocalDateTime;
 
