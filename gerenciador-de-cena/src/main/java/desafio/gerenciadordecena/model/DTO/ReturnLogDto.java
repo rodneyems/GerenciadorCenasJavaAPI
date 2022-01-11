@@ -8,17 +8,19 @@ public class ReturnLogDto {
 	public String De;
 	public String Para;
 	public String Time;
-	
+
 	public ReturnLogDto(Log log) {
-		this.CenaId = log.CenaId;
-		this.Action = log.Action.toString();
-		this.De = log.De.toString();
-		this.Para = log.Para.toString();
-		this.Time = log.Time.toString();
+		this.CenaId = log.getCenaId();
+		this.Action = log.getAction().toString();
+		this.De = log.getDe().toString();
+		this.Para = log.getPara().toString();
+		this.Time = log.getTime().toString();
 	}
+
 	public int getCenaId() {
 		return CenaId;
 	}
+
 	public String getAction() {
 		return Action;
 	}
@@ -35,5 +37,4 @@ public class ReturnLogDto {
 		return Time;
 	}
 
-	
 }

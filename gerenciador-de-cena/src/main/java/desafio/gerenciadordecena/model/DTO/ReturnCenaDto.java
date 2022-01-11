@@ -8,25 +8,27 @@ import desafio.gerenciadordecena.model.Models.Cena;
 import desafio.gerenciadordecena.model.Models.StatusEnum;
 
 public class ReturnCenaDto {
-	public int Id;
+	private int Id;
 
-	public String Title = "Sem Titulo";
+	private String Title = "Sem Titulo";
 
-	public StatusEnum Status = StatusEnum.Pendente;
+	private StatusEnum Status = StatusEnum.Pendente;
 
-	public StatusEnum PreviousStatus = StatusEnum.Pendente;
+	private StatusEnum PreviousStatus = StatusEnum.Pendente;
 
-	public LocalDateTime TimeLastChange;
+	private LocalDateTime TimeLastChange;
 
 	public ReturnCenaDto(Cena cena) {
-		this.Id = cena.Id;
-		this.Title = cena.Title;
-		this.Status = cena.Status;
-		this.PreviousStatus = cena.PreviousStatus;
-		this.TimeLastChange = cena.TimeLastChange;
+		this.Id = cena.getId();
+		this.Title = cena.getTitle();
+		this.Status = cena.getStatus();
+		this.PreviousStatus = cena.getPreviousStatus();
+		this.TimeLastChange = cena.getTimeLastChange();
 	}
 	
-	public List<ReturnCenaDto> convert(List<Cena> cenas){
+	public static List<ReturnCenaDto> convert(List<Cena> cenas){
+		System.out.println(cenas.get(1));
+		System.out.println(cenas.stream().map(ReturnCenaDto::new).collect(Collectors.toList()).get(0));
 		return cenas.stream().map(ReturnCenaDto::new).collect(Collectors.toList());
 	}
 
@@ -48,6 +50,12 @@ public class ReturnCenaDto {
 
 	public LocalDateTime getTimeLastChange() {
 		return TimeLastChange;
+	}
+
+	@Override
+	public String toString() {
+		return "ReturnCenaDto [Id=" + Id + ", Title=" + Title + ", Status=" + Status + ", PreviousStatus="
+				+ PreviousStatus + ", TimeLastChange=" + TimeLastChange + "]";
 	}
 
 }
