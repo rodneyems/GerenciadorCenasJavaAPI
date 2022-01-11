@@ -2,58 +2,46 @@ package desafio.gerenciadordecena.model.DTO;
 
 import java.time.LocalDateTime;
 
+import desafio.gerenciadordecena.model.Models.Cena;
 import desafio.gerenciadordecena.model.Models.StatusEnum;
 
 public class ReturnCenaDto {
-    public int Id;
+	public int Id;
 
-    public String Title = "Sem Titulo";
+	public String Title = "Sem Titulo";
 
-    public StatusEnum Status = StatusEnum.Pendente;
+	public StatusEnum Status = StatusEnum.Pendente;
 
-    public StatusEnum PreviousStatus = StatusEnum.Pendente;
+	public StatusEnum PreviousStatus = StatusEnum.Pendente;
 
-    public LocalDateTime TimeLastChange;
+	public LocalDateTime TimeLastChange;
+
+	public ReturnCenaDto(Cena cena) {
+		this.Id = cena.Id;
+		this.Title = cena.Title;
+		this.Status = cena.Status;
+		this.PreviousStatus = cena.PreviousStatus;
+		this.TimeLastChange = cena.TimeLastChange;
+	}
 
 	public int getId() {
 		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
 	}
 
 	public String getTitle() {
 		return Title;
 	}
 
-	public void setTitle(String title) {
-		Title = title;
-	}
-
 	public StatusEnum getStatus() {
 		return Status;
-	}
-
-	public void setStatus(StatusEnum status) {
-		Status = status;
 	}
 
 	public StatusEnum getPreviousStatus() {
 		return PreviousStatus;
 	}
 
-	public void setPreviousStatus(StatusEnum previousStatus) {
-		PreviousStatus = previousStatus;
-	}
-
 	public LocalDateTime getTimeLastChange() {
 		return TimeLastChange;
 	}
 
-	public void setTimeLastChange(LocalDateTime timeLastChange) {
-		TimeLastChange = timeLastChange;
-	}
-    
-    
 }
