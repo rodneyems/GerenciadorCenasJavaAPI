@@ -8,6 +8,10 @@ public class Log {
     public int CenaId;
 
     public ActionEnum Action;
+    
+    public StatusEnum De;
+    
+    public StatusEnum Para;
 
     public LocalDateTime Time;
 
