@@ -10,8 +10,8 @@ public class AddCenaDto {
 	public LocalDateTime TimeLastChange;
 
 	public AddCenaDto(Cena cena) {
-		this.Title = cena.Title;
-		this.TimeLastChange = cena.TimeLastChange;
+		this.Title = cena.getTitle();
+		this.TimeLastChange = cena.getTimeLastChange();
 	}
 
 	public String getTitle() {

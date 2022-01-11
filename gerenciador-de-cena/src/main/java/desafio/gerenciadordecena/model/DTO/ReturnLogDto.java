@@ -3,11 +3,11 @@ package desafio.gerenciadordecena.model.DTO;
 import desafio.gerenciadordecena.model.Models.Log;
 
 public class ReturnLogDto {
-	public int CenaId;
-	public String Action;
-	public String De;
-	public String Para;
-	public String Time;
+	private int CenaId;
+	private String Action;
+	private String De;
+	private String Para;
+	private String Time;
 
 	public ReturnLogDto(Log log) {
 		this.CenaId = log.getCenaId();

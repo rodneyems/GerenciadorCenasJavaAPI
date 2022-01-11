@@ -11,8 +11,8 @@ public class ChangeStatusDto {
     public LocalDateTime TimeLastChange;
     
     public ChangeStatusDto(Cena cena) {
-    	this.Status = cena.Status;
-    	this.TimeLastChange = cena.TimeLastChange;
+    	this.Status = cena.getStatus();
+    	this.TimeLastChange = cena.getTimeLastChange();
     }
     
 	public StatusEnum getStatus() {
