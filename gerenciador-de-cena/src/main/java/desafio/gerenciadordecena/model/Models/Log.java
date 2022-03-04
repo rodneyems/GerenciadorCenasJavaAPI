@@ -2,15 +2,27 @@ package desafio.gerenciadordecena.model.Models;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Log {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int Id;
 
 	private int CenaId;
 
 	private ActionEnum Action;
-    
+
+	@Enumerated(EnumType.STRING)
 	private StatusEnum De;
-    
+
+	@Enumerated(EnumType.STRING)
 	private StatusEnum Para;
 
 	private LocalDateTime Time;

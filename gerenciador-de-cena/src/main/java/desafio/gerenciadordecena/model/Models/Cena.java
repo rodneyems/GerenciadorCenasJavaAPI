@@ -1,24 +1,36 @@
 package desafio.gerenciadordecena.model.Models;
 
 import java.time.LocalDateTime;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
+@Entity
 public class Cena {
-    private int Id;
 
-    private String Title = "Sem Titulo";
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int Id;
 
-    private StatusEnum Status = StatusEnum.Pendente;
+	private String Title = "Sem Titulo";
 
-    private StatusEnum PreviousStatus = StatusEnum.Pendente;
+	@Enumerated(EnumType.STRING)
+	private StatusEnum Status = StatusEnum.Pendente;
 
-    private LocalDateTime TimeLastChange;
-    
-    public Cena(int Id, String Title, StatusEnum Status, StatusEnum PreviousStatus) {
-    	this.setId(Id);
-    	this.setTitle(Title);
-    	this.setStatus(PreviousStatus);
-    	this.setTimeLastChange(TimeLastChange);
-    }
+	@Enumerated(EnumType.STRING)
+	private StatusEnum PreviousStatus = StatusEnum.Pendente;
+
+	private LocalDateTime TimeLastChange;
+
+	public Cena(int Id, String Title, StatusEnum Status, StatusEnum PreviousStatus) {
+		this.setId(Id);
+		this.setTitle(Title);
+		this.setStatus(PreviousStatus);
+		this.setTimeLastChange(TimeLastChange);
+	}
 
 	public int getId() {
 		return Id;
@@ -59,7 +71,5 @@ public class Cena {
 	public void setTimeLastChange(LocalDateTime timeLastChange) {
 		TimeLastChange = timeLastChange;
 	}
-    
-    
 
 }
